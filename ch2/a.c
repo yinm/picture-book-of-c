@@ -2,12 +2,12 @@
 
 main()
 {
-  int a = 1;
-  int b = 1;
+  int a = 10;
+  int b = 20;
 
-  printf("前置だと%dになります。\n", ++a);
-  printf("もう一度%dを出力しておきます\n", a);
-
-  printf("後置だと%dになります。\n", b++);
-  printf("もう一度%dを出力しておきます\n", b);
+  printf("a=%d b=%d\n", a, b);
+  printf("a<b...%d\n", a<b);
+  printf("a>b...%d\n", a>b);
+  printf("a==b...%d\n", a==b);
+  printf("a=b...%d\n", (a=b));
 }
