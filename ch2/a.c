@@ -2,12 +2,9 @@
 
 main()
 {
-  int a = 10;
-  int b = 20;
+  int a = 30;
+  int x;
 
-  printf("a=%d b=%d\n", a, b);
-  printf("a<b...%d\n", a<b);
-  printf("a>b...%d\n", a>b);
-  printf("a==b...%d\n", a==b);
-  printf("a=b...%d\n", (a=b));
+  x = (0 <= a && a <= 100) ? a : 0;
+  printf("%d\n", x);
 }
