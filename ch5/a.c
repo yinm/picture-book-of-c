@@ -1,25 +1,16 @@
 #include <stdio.h>
 
-int y;
-int z;
-
-void myfunc(int a)
-{
-  int z;
-  int x;
-  x = a;
-  y = a;
-  z = a;
-}
+void dispnum(int a);
 
 int main()
 {
-  int x;
-  x = 10;
-  y = 10;
-  z = 10;
-  printf("x,y,zの値は%d,%d,%d\n", x, y, z);
-  myfunc(5);
-  printf("x,y,zの値は%d,%d,%d\n", x, y, z);
+  int x = 10;
+
+  dispnum(5);
+  dispnum(x);
 }
 
+void dispnum(int a)
+{
+  printf("引数の値は:%d\n", a);
+}
