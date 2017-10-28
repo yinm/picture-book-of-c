@@ -1,16 +1,33 @@
 #include <stdio.h>
 
-void dispnum(int a);
+void swapByVal(int, int);
+void swapByRef(int *, int *);
 
 int main()
 {
-  int x = 10;
+  int a = 2;
+  int b = 7;
 
-  dispnum(5);
-  dispnum(x);
+  printf("a=%d, b=%d\n", a, b);
+  swapByVal(a, b);
+  printf("a=%d, b=%d\n", a, b);
+  swapByRef(&a, &b);
+  printf("a=%d, b=%d\n", a, b);
 }
 
-void dispnum(int a)
+void swapByVal(int x, int y)
 {
-  printf("引数の値は:%d\n", a);
+  int temp;
+  temp = x;
+  x = y;
+  y = temp;
 }
+
+void swapByRef(int *x, int *y)
+{
+  int temp;
+  temp = *x;
+  *x = *y;
+  *y = temp;
+}
+
