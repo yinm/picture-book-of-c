@@ -2,10 +2,8 @@
 
 main()
 {
-  char c = 1;
-  char s[10] = "Hello";
-
-  printf("long型 = %dバイト\n", sizeof(long));
-  printf("char型変数 = %dバイト\n", sizeof(c));
-  printf("文字列変数 = %dバイト\n", sizeof(s));
+  printf("3/2=%d\n", 3/2);
+  printf("3/2=%f\n", 3.0/2.0);
+  printf("3/2=%f\n", 3.0/2);
+  printf("3/2=%f\n", 3/2.0);
 }
