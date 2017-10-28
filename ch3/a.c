@@ -2,43 +2,24 @@
 
 main()
 {
-  char c = '\0';
-  char prevletter;
-  int wordnum;
-  int word_in;
+  int x, y;
+  char c;
 
-  while(1)
+  for (x = 2; x < 8; x++)
+    printf("16: 10:c | ");
+  printf("\n");
+
+  for (x = 2; x < 8; x++)
+    printf("---------+-");
+  printf("\n");
+
+  for (y = 0; y < 16; y++)
   {
-    wordnum = 0;
-    word_in = 1;
-    prevletter = '\0';
-    printf("文字列を入力してください:");
-
-    while(1)
+    for (x = 2; x < 8; x++)
     {
-      c = getchar();
-      if (c == '\n')
-      {
-        if (word_in)
-          wordnum++;
-        break;
-      }
-
-      prevletter = c;
-      if (c == ' ' || c == '.')
-      {
-        if (word_in)
-        {
-          wordnum++;
-          word_in = 0;
-        }
-      }
-      else
-        word_in = 1;
+      c = x * 16 + y;
+      printf("%2X:%3d:%c | ", c, c, c);
     }
-
-    if (prevletter == '\0')
-      break;
-    printf("ワード数: %d\n", wordnum);
+    printf("\n");
   }
 }
