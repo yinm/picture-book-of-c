@@ -7,11 +7,12 @@ struct _colorpoint2d {
 
 struct _colorpoint2d *ppt = &cpt;
 
-int main()
+void main()
 {
   ppt->x = 2.4;
   ppt->y = 3.2;
   ppt->colorid = 1;
-  printf("(%3.1f, %3.1f) color=%d\n", ppt->x, ppt->y, ppt->colorid);
-}
 
+  printf("(%3.1f, %3.1f) color=%d\n", ppt->x, ppt->y, ppt->colorid);
+  return;
+}
