@@ -2,9 +2,9 @@
 
 main()
 {
-  int a = 30;
-  int x;
+  int a = 15;
+  int b = 0x11;
 
-  x = (0 <= a && a <= 100) ? a : 0;
-  printf("%d\n", x);
+  printf("10進数の%dは、16進数では%X\n", a, a);
+  printf("16進数の%Xは、10進数では%d\n", b, b);
 }
