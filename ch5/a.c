@@ -1,14 +1,17 @@
 #include <stdio.h>
 
-void dispnum(int a) 
+int addnum(int a, int b)
 {
-  printf("引数の値は%d\n", a);
+  int x;
+
+  x = a + b;
+  return x;
 }
 
 int main()
 {
-  int x = 10;
+  int n;
 
-  dispnum(5);
-  dispnum(x);
+  n = addnum(2, 3);
+  printf("戻り値は%d\n", n);
 }
