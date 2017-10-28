@@ -2,23 +2,43 @@
 
 main()
 {
-  char a;
+  char c = '\0';
+  char prevletter;
+  int wordnum;
+  int word_in;
 
-  printf("1 ~ 3で好きな数字を入力してください.\n");
-  a = getchar();
-
-  switch(a)
+  while(1)
   {
-    case '1':
-      printf("中吉\n");
+    wordnum = 0;
+    word_in = 1;
+    prevletter = '\0';
+    printf("文字列を入力してください:");
+
+    while(1)
+    {
+      c = getchar();
+      if (c == '\n')
+      {
+        if (word_in)
+          wordnum++;
+        break;
+      }
+
+      prevletter = c;
+      if (c == ' ' || c == '.')
+      {
+        if (word_in)
+        {
+          wordnum++;
+          word_in = 0;
+        }
+      }
+      else
+        word_in = 1;
+    }
+
+    if (prevletter == '\0')
       break;
-    case '2':
-      printf("大吉\n");
-      break;
-    case '3':
-      printf("小吉\n");
-      break;
-    default:
-      printf("入力が間違っています\n");
+    printf("ワード数: %d\n", wordnum);
   }
 }
