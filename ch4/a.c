@@ -1,18 +1,23 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <memory.h>
 
 main()
 {
-  char *b;
-  char a[4] = {20, 40, 30, 10};
+  char s[] = "I love cat and dog.";
+  char c = 'a';
+  char *p = s;
+  int n = 0;
 
-  b = (char *)malloc(sizeof(char)*200);
-  if (!b)
-    return 1;
+  printf("\"%s\"の中から、\'%c\'を探します。\n", s, c);
+  while (*p != '\0') {
+    if (*p == c) {
+      printf("%d文字目で発見しました\n", p - s + 1);
+      n++;
+    }
+    p++;
+  }
 
-  memcpy(b, a, sizeof(char)*200);
-  printf("%d %d %d %d\n", b[0], b[1], b[2], b[3]);
-  free(b);
+  if (n == 0)
+    printf("1つも見つかりませんでした\n");
+  else
+    printf("全部で%d個見つかりました\n", n);
 }
-
