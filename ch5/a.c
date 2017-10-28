@@ -1,17 +1,17 @@
 #include <stdio.h>
+#include <string.h>
 
-int kaijo(int);
-
-int main()
+int main(int argc, char *argv[])
 {
-  int n = kaijo(5);
-  printf("%d", n);
-}
+  int i;
 
-int kaijo(int n)
-{
-  if (n == 0)
+  if (argc <= 1)
     return 1;
-  else
-    return (n * kaijo(n - 1));
+
+  if (strcmp(argv[1], "enum") == 0)
+    for (i = 0; i < argc; i++)
+      printf("argv[%d] : %s\n", i, argv[i]);
+  else if (strcmp(argv[1], "count") == 0)
+    printf("コマンドライン引数の数: %d\n", argc - 1);
+  return 0;
 }
