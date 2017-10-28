@@ -1,20 +1,19 @@
 #include <stdio.h>
 
-struct data {
-  int no;
-  char name[10];
+typedef struct _PROFILE {
+  char name[40];
   int age;
-};
-
-struct data list[3] = {
-  {1, "nagashima", 39},
-  {2, "yamada", 33},
-  {3, "tonegawa", 31}
-};
+} PROFILE;
 
 int main()
 {
-  struct data *sp;
-  for (sp = list; sp != list+3; sp++)
-    printf("%d %s %d\n", sp->no, sp->name, sp->age);
+  PROFILE prof[2] = {
+    {"Maiko", 20},
+    {"Naoki", 31}
+  };
+
+  int i;
+  for (i = 0; i < 2; i++)
+    printf("%sさんは%d歳\n", prof[i].name, prof[i].age);
 }
+
