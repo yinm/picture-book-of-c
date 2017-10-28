@@ -5,7 +5,7 @@ struct _point2d {
   double y;
 } pt;
 
-int main()
+void main()
 {
   pt.x = 30.0;
   pt.y = 23.6;
