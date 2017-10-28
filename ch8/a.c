@@ -1,10 +1,7 @@
 #include <stdio.h>
-
-#define LOOPNUM 3
+#define HIKU(x, y) ((x) - (y))
 
 int main()
 {
-  int i;
-  for (i = 0; i < LOOPNUM; i++)
-    printf("LoopCount:%d\n", i + 1);
+  printf("マクロの実行結果: %d\n", HIKU(5, 3));
 }
