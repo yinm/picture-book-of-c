@@ -2,16 +2,16 @@
 
 main()
 {
-  int s = 65;
-  printf("あなたの点数は%d点です.\n", s);
+  char c = '#';
 
-  if (s < 70)
-  {
-    printf("平均まであと%d点\n", 70 - s);
-    printf("がんばりましょう!\n");
-  }
+  printf("%cは", c);
+
+  if ('0' <= c && c <= '9')
+    printf("数字です.\n");
+  else if('a' <= c && c <= 'z')
+    printf("小文字です.\n");
+  else if('A' <= c && c <= 'Z')
+    printf("大文字です.\n");
   else
-  {
-    printf("よくできました!\n");
-  }
+    printf("記号です.\n");
 }
