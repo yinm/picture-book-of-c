@@ -1,39 +1,49 @@
 #include <stdio.h>
-#include <string.h>
 
-int main()
+int main(int argc, char* argv[])
 {
-  FILE *fpr, *fpw;
-  char bufr[256], bufw[256];
-  char str1[] = "dog";
-  char str2[] = "rabbit";
-  char *p, *q;
+  FILE *fp;
+  unsigned char buf[16];
+  unsigned long addr = 0;
+  int readnum, i;
 
-  if (! (fpr = fopen("dog.txt", "r"))) {
-    printf("読み込みファイルのオープンに失敗しました。");
+  if (argc <= 1) {
+    printf("usage: dump filename\n");
     return 1;
   }
-  if (! (fpw = fopen("rabbit.txt", "w"))) {
-    printf("書き込みファイルのオープンに失敗しました。");
+
+  if (! (fp = fopen(argv[1], "rb"))) {
+    printf("file open error.\n");
     return 1;
   }
 
   while (1) {
-    fgets(bufr, 256, fpr);
-    strcpy(bufw, bufr);
-    p = strstr(bufr, str1);
+    printf("%08X", addr);
 
-    if (p) {
-      q = bufw + (p - bufr);
-      strcpy(q, str2);
-      strcpy(q + strlen(str2), p + strlen(str1));
+    readnum = fread(buf, 1, 16, fp);
+
+    /* バイナリデータの表示 */
+    for (i = 0; i < readnum; i++) {
+      if (i == 8)
+        printf(" ");
+      printf("%02X ", buf[i]);
     }
-    fprintf(fpw, "%s", bufw);
-    if (feof(fpr))
+
+    for (i = readnum; i < 16; i++) {
+      if (i == 8)
+        printf(" ");
+      printf(" ");
+    }
+    printf(" ");
+
+    for (i = 0; i < readnum; i++)
+      printf("%c", (32 <= buf[i] && buf[i] <= 126) ? buf[i] : '.');
+    printf("\n");
+    addr += 16;
+    if (feof(fp))
       break;
   }
 
-  fclose(fpr);
-  fclose(fpw);
+  fclose(fp);
   return 0;
 }
