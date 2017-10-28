@@ -1,17 +1,12 @@
 #include <stdio.h>
+#include <string.h>
 
 main()
 {
-  int i = 0;
-  char a[] = "NET";
-  char b[4];
+  char s1[] = "cat";
+  char s2[] = "dog";
+  char s[20];
 
-  while (a[i] != '\0')
-  {
-    b[i] = a[2 - i];
-    i++;
-  }
-  b[3] = '\0';
-
-  printf("%sは逆から読むと%s\n", a, b);
+  sprintf(s, "I love %s and %s.", s1, s2);
+  printf("[%s] の文字数は %d\n", s, strlen(s));
 }
