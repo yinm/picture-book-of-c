@@ -2,11 +2,13 @@
 
 main()
 {
-  int a = 0;
+  int a = 1;
+  int b = 1;
 
-  while (a < 5)
+  for (a = 0; a < 5; a++)
   {
-    printf("%d\n", a);
-    a == a + 1;
+    if (a + b >= 3)
+      break;
+    printf("%d+%d=%d\n", a, b, a + b);
   }
 }
