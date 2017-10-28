@@ -3,8 +3,9 @@
 
 main()
 {
-  char s[6];
-  strcpy(s, "Hello");
+  char a[6] = "ABC";
+  char b[] = "de";
 
-  printf(s);
+  printf("%s", strcat(a, b));
 }
+
