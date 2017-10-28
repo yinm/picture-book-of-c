@@ -2,15 +2,7 @@
 
 main()
 {
-  int a = 90;
-
-  if (a > 80)
-  {
-    if (a == 100)
-      printf("満点です\n");
-    else
-      printf("もう少しです\n");
-  }
-  else
-    printf("がんばりましょう\n");
+  int i;
+  for (i = 1; i < 4; i++)
+    printf("こんにちは%d\n", i);
 }
