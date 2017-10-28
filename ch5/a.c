@@ -1,14 +1,12 @@
 #include <stdio.h>
 
-int addnum(int a, int b)
+void dispnum(int a)
 {
-  int x;
-  x = a + b;
-  return x;
+  printf("引数の値は%d\n", a);
+  return;
 }
 
-main()
+int main()
 {
-  int sum = addnum(2, 3);
-  printf("%d", sum);
+  dispnum(4);
 }
