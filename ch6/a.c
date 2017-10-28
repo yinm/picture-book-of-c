@@ -3,14 +3,14 @@
 int main()
 {
   FILE *fp;
-  char filename[] = "bintest.dat";
-  int buf_w[10], buf_r[10];
+  char filename[] = "bintest2.dat";
+  int buf_w[10]; 
+  int buf_r[10];
   int i;
 
   for (i = 0; i < 10; i++)
     buf_w[i] = (i + 1) * 10;
-
-  if (!(fp = fopen(filename, "wb")))
+  if (! (fp = fopen(filename, "wb")))
     return 1;
   if (fwrite(buf_w, sizeof(int), 10, fp) != 10) {
     fclose(fp);
@@ -18,7 +18,7 @@ int main()
   }
   fclose(fp);
 
-  if (!(fp = fopen(filename, "rb")))
+  if (! (fp = fopen(filename, "rb")))
     return 1;
   if (fread(buf_r, sizeof(int), 10, fp) != 10) {
     fclose(fp);
@@ -26,6 +26,7 @@ int main()
   }
   fclose(fp);
 
-  for (i = 0; i < 10; i++)
+  for (i = 0; i < 10; i++) {
     printf("%d ", buf_r[i]);
+  }
 }
