@@ -1,24 +1,39 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
-  int a;
-  int b = 7;
-  char s[40];
+  FILE *fpr, *fpw;
+  char bufr[256], bufw[256];
+  char str1[] = "dog";
+  char str2[] = "rabbit";
+  char *p, *q;
 
-  printf("名前を入力してください\n");
-  gets(s);
-
-  printf("数当てクイズ！ 0から9の数字を入力してね\n");
-  while (a != b) {
-    scanf("%d", &a);
-    if ((a == b-1) || (a == b+1))
-      printf("おしい！\n");
-    else if (a > b+1)
-      printf("もっと小さい数字です\n");
-    else if (a < b-1)
-      printf("もっと大きい数字です\n");
+  if (! (fpr = fopen("dog.txt", "r"))) {
+    printf("読み込みファイルのオープンに失敗しました。");
+    return 1;
+  }
+  if (! (fpw = fopen("rabbit.txt", "w"))) {
+    printf("書き込みファイルのオープンに失敗しました。");
+    return 1;
   }
 
-  printf("正解！ %s さん、おめでとうございます！！\n", s);
+  while (1) {
+    fgets(bufr, 256, fpr);
+    strcpy(bufw, bufr);
+    p = strstr(bufr, str1);
+
+    if (p) {
+      q = bufw + (p - bufr);
+      strcpy(q, str2);
+      strcpy(q + strlen(str2), p + strlen(str1));
+    }
+    fprintf(fpw, "%s", bufw);
+    if (feof(fpr))
+      break;
+  }
+
+  fclose(fpr);
+  fclose(fpw);
+  return 0;
 }
