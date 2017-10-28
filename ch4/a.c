@@ -2,14 +2,10 @@
 
 main()
 {
-  int a[4];
-  int n = 1;
+  int i;
+  int a[] = {1, 2, 3, 4};
 
-  a[0] = 1;
-  a[1] = 2;
-  a[2] = 3;
-  a[3] = 4;
-
-  printf("%d\n", a[n]);
+  for (i = 3; i >= 0; i--)
+    printf("%d ", a[i]);
+  printf("\n");
 }
-
