@@ -3,9 +3,10 @@
 
 main()
 {
-  char a[6] = "ABC";
-  char b[] = "de";
+  char a[] = "ABC";
+  char b[] = "ABCD";
+  int c = strcmp(a, b);
 
-  printf("%s", strcat(a, b));
+  printf("%d", c);
 }
 
