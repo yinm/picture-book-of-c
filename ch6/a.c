@@ -3,20 +3,19 @@
 int main()
 {
   FILE *fp;
-  char s[20];
-  int i = 1;
+  int a = 100;
+  int b = 5;
+  int c = 40;
+  int x = 1;
+  int y = 10;
+  int z = 100;
+  char delm[] = "----====----\n";
 
-  fp = fopen("abc.txt", "r");
+  fp = fopen("mat.txt", "w");
   if (fp == NULL)
     return 1;
-  while(1)
-  {
-    fgets(s, 20, fp);
-    if (feof(fp))
-      break;
-    printf("%04d:%s", i, s);
-    i++;
-  }
-
+  fputs(delm, fp);
+  fprintf(fp, "%4d%4d%4d\n%4d%4d%4d\n", a, b, c, x, y, z);
+  fputs(delm, fp);
   fclose(fp);
 }
