@@ -2,10 +2,16 @@
 
 main()
 {
-  int i;
-  int a[] = {1, 2, 3, 4};
+  int i = 0;
+  char a[] = "NET";
+  char b[4];
 
-  for (i = 3; i >= 0; i--)
-    printf("%d ", a[i]);
-  printf("\n");
+  while (a[i] != '\0')
+  {
+    b[i] = a[2 - i];
+    i++;
+  }
+  b[3] = '\0';
+
+  printf("%sは逆から読むと%s\n", a, b);
 }
