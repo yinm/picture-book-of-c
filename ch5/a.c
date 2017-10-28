@@ -1,11 +1,14 @@
 #include <stdio.h>
 
-void hello(void)
+void dispnum(int a) 
 {
-  printf("Hello World\n");
+  printf("引数の値は%d\n", a);
 }
 
 int main()
 {
-  hello();
+  int x = 10;
+
+  dispnum(5);
+  dispnum(x);
 }
