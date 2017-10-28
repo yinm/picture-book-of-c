@@ -2,13 +2,23 @@
 
 main()
 {
-  int a = 1;
-  int b = 1;
+  char a;
 
-  for (a = 1; a < 5; a++)
+  printf("1 ~ 3で好きな数字を入力してください.\n");
+  a = getchar();
+
+  switch(a)
   {
-    if (a + b == 3)
-      continue;
-    printf("%d+%d=%d\n", a, b, a + b);
+    case '1':
+      printf("中吉\n");
+      break;
+    case '2':
+      printf("大吉\n");
+      break;
+    case '3':
+      printf("小吉\n");
+      break;
+    default:
+      printf("入力が間違っています\n");
   }
 }
