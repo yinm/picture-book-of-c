@@ -1,20 +1,10 @@
 #include <stdio.h>
 
-void increment(void);
+#define LOOPNUM 3
 
 int main()
 {
   int i;
-  for (i = 0; i < 3; i++)
-    increment();
+  for (i = 0; i < LOOPNUM; i++)
+    printf("LoopCount:%d\n", i + 1);
 }
-
-void increment()
-{
-  int a = 0;
-  static int b = 0;
-  a++;
-  b++;
-  printf("a: %d, b: %d\n", a, b);
-}
-
