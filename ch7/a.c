@@ -6,7 +6,7 @@ struct data {
   int age;
 };
 
-struct data list[10] = {
+struct data list[3] = {
   {1, "nagashima", 39},
   {2, "yamada", 33},
   {3, "tonegawa", 31}
@@ -14,9 +14,7 @@ struct data list[10] = {
 
 int main()
 {
-  int i;
-  struct data *sp = list;
-
-  for (i = 0; i < 3; i++)
-    printf("%d %s %d\n", (*(sp + i)).no, (*(sp + i)).name, (*(sp + i)).age);
+  struct data *sp;
+  for (sp = list; sp != list+3; sp++)
+    printf("%d %s %d\n", sp->no, sp->name, sp->age);
 }
