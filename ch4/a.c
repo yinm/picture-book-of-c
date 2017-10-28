@@ -3,9 +3,8 @@
 
 main()
 {
-  char s[] = "ABC";
-  int l;
-  l = strlen(s);
-  printf("%d", l);
-}
+  char s[6];
+  strcpy(s, "Hello");
 
+  printf(s);
+}
