@@ -2,9 +2,9 @@
 
 main()
 {
-  int i, j;
-
-  for (j = 1; j <= 9; j++)
-    for (i = 1; i <= 9; i++)
-      printf("%d*%d=%d\n", j, i, j*i);
+  char a;
+  do {
+    a = getchar();
+    printf("%c", a);
+  } while (a != 'e');
 }
