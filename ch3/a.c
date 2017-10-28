@@ -2,10 +2,16 @@
 
 main()
 {
-  int a = 5;
+  int s = 65;
+  printf("あなたの点数は%d点です.\n", s);
 
-  if (a % 2 == 0)
-    printf("%dは偶数です.\n", a);
+  if (s < 70)
+  {
+    printf("平均まであと%d点\n", 70 - s);
+    printf("がんばりましょう!\n");
+  }
   else
-    printf("%dは奇数です.\n", a);
+  {
+    printf("よくできました!\n");
+  }
 }
