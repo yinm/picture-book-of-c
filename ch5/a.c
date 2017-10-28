@@ -1,33 +1,16 @@
 #include <stdio.h>
+#include <string.h>
 
-void swapByVal(int, int);
-void swapByRef(int *, int *);
-
-int main()
+int main(int argc, char *argv[])
 {
-  int a = 2;
-  int b = 7;
+  int i;
 
-  printf("a=%d, b=%d\n", a, b);
-  swapByVal(a, b);
-  printf("a=%d, b=%d\n", a, b);
-  swapByRef(&a, &b);
-  printf("a=%d, b=%d\n", a, b);
+  if (argc <= 1)
+    return 1;
+  if (strcmp(argv[1], "enum") == 0)
+    for (i = 0; i < argc; i++)
+      printf("argv[%d] : %s\n", i, argv[i]);
+  else if (strcmp(argv[1], "count") == 0)
+    printf("コマンドライン引数の数: %d\n", argc - 1);
+  return 0;
 }
-
-void swapByVal(int x, int y)
-{
-  int temp;
-  temp = x;
-  x = y;
-  y = temp;
-}
-
-void swapByRef(int *x, int *y)
-{
-  int temp;
-  temp = *x;
-  *x = *y;
-  *y = temp;
-}
-
