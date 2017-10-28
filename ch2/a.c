@@ -2,9 +2,10 @@
 
 main()
 {
-  int a = 15;
-  int b = 0x11;
+  char c = 1;
+  char s[10] = "Hello";
 
-  printf("10進数の%dは、16進数では%X\n", a, a);
-  printf("16進数の%Xは、10進数では%d\n", b, b);
+  printf("long型 = %dバイト\n", sizeof(long));
+  printf("char型変数 = %dバイト\n", sizeof(c));
+  printf("文字列変数 = %dバイト\n", sizeof(s));
 }
