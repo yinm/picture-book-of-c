@@ -2,9 +2,11 @@
 
 main()
 {
-  char a;
-  do {
-    a = getchar();
-    printf("%c", a);
-  } while (a != 'e');
+  int a = 0;
+
+  while (a < 5)
+  {
+    printf("%d\n", a);
+    a == a + 1;
+  }
 }
