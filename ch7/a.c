@@ -6,8 +6,8 @@ struct data {
   int age;
 };
 
-struct data list[3] = {
-  {1, "nagayama", 39},
+struct data list[10] = {
+  {1, "nagashima", 39},
   {2, "yamada", 33},
   {3, "tonegawa", 31}
 };
@@ -15,6 +15,8 @@ struct data list[3] = {
 int main()
 {
   int i;
+  struct data *sp = list;
+
   for (i = 0; i < 3; i++)
-    printf("%d %s %d\n", list[i].no, list[i].name, list[i].age);
+    printf("%d %s %d\n", (*(sp + i)).no, (*(sp + i)).name, (*(sp + i)).age);
 }
