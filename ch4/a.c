@@ -3,7 +3,7 @@
 
 int main()
 {
-  char s[] = "I love cat.";
+  char s[] = "I love dog.";
   char c = 'd';
   char *p = NULL;
 
