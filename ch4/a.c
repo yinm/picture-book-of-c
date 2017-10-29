@@ -2,8 +2,10 @@
 
 int main()
 {
-  char a;
-  short b;
+  char x = 4;
+  char y;
+  char *p = &x;
+  y = *p;
 
-  printf("aのアドレスは %x, bのアドレスは %x \n", &a, &b);
+  printf("変数xの値は%dです\n", y);
 }
