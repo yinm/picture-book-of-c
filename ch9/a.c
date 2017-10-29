@@ -1,23 +1,21 @@
 #include <stdio.h>
-
-union _user {
-  int userid;
-  char name[10];
-} user;
+#include <time.h>
 
 int main()
 {
-  int flag = 0;
-  printf("入力項目は？(0 = ID, 1 = 名前) ");
-  scanf("%d", &flag);
+  time_t ct;
+  struct tm *now;
+  ct = time(NULL);
+  now = localtime(&ct);
 
-  if (flag) {
-    printf("name? ");
-    scanf("%s", user.name);
-    printf("名前は%sですね。\n", user.name);
-  } else {
-    printf("ID? ");
-    scanf("%d", &(user.userid));
-    printf("IDは%dですね。\n", user.userid);
-  }
+  printf("%d年%d月%d日 %2d:%2d:%2d\n",
+      (now->tm_year) + 1900,
+      (now->tm_mon) + 1,
+      now->tm_mday,
+      now->tm_hour,
+      now->tm_min,
+      now->tm_sec
+  );
+
+  printf("%s", ctime(&ct));
 }
