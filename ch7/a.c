@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-struct data{
+struct data {
   int no;
   char name[10];
   int age;
@@ -14,8 +14,8 @@ int main()
     {3, "tonegawa", 31}
   };
 
-  struct data *sp;
-  for (sp = list; sp != list + 3; sp++) {
-    printf("%d %s %d\n", sp->no, sp->name, sp->age);
+  int i;
+  for (i = 0; i < 3; i++) {
+    printf("%d %s %d\n", list[i].no, list[i].name, list[i].age);
   }
 }
