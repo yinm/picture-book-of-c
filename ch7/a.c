@@ -14,10 +14,8 @@ int main()
     {3, "tonegawa", 31}
   };
 
-  int i;
-  struct data *sp = list;
-
-  for (i = 0; i < 3; i++) {
-    printf("%d %s %d\n", (*(sp + i)).no, (*(sp + i)).name, (*(sp + i)).age);
+  struct data *sp;
+  for (sp = list; sp != list + 3; sp++) {
+    printf("%d %s %d\n", sp->no, sp->name, sp->age);
   }
 }
