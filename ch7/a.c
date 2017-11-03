@@ -15,7 +15,9 @@ int main()
   };
 
   int i;
+  struct data *sp = list;
 
-  for (i = 0; i < 3; i++)
-    printf("%d %s %d\n", list[i].no, list[i].name, list[i].age);
+  for (i = 0; i < 3; i++) {
+    printf("%d %s %d\n", (*(sp + i)).no, (*(sp + i)).name, (*(sp + i)).age);
+  }
 }
