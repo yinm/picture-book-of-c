@@ -1,16 +1,21 @@
 #include <stdio.h>
 
-struct _colorpoint2d {
-  double x;
-  double y;
-  int colorid;
-} cpt;
-struct _colorpoint2d *ppt = &cpt;
+struct data{
+  int no;
+  char name[10];
+  int age;
+};
 
 int main()
 {
-  ppt->x = 2.4;
-  ppt->y = 3.2;
-  ppt->colorid = 1;
-  printf("(%3.1f, %3.1f) color=%d\n", ppt->x, ppt->y, ppt->colorid);
+  struct data list[3] = {
+    {1, "nagashima", 39},
+    {2, "yamada", 33},
+    {3, "tonegawa", 31}
+  };
+
+  int i;
+
+  for (i = 0; i < 3; i++)
+    printf("%d %s %d\n", list[i].no, list[i].name, list[i].age);
 }
